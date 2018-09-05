@@ -3,6 +3,5 @@
 require '../lib/mygem/TX'
 
 txdb = TX::DeleteBranch.new()
-txdb.paraseArgs(ARGV)
 
 

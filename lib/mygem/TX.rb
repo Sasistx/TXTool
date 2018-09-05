@@ -29,24 +29,6 @@ module TX
             file = IO.popen(commandStr)
             file.each_line {|s| printf s}
         end
-        # def paraseArgs(args)
-        #     v1 = args[0]
-        #     if args.size == 2
-        #         v2 = args[1]
-        #         if v1 == '-l'
-        #             delete_local(v2)
-        #         elsif v1 == '-r'
-        #             delete_remote(v2)
-        #         elsif v1 == '-a'
-        #             delete_local(v2)
-        #             delete_remote(v2)
-        #         else
-        #             puts "only -r, -l or -a is valid"
-        #         end
-        #     else
-        #         puts "-r remote , -l local, -a all"
-        #     end
-        # end
     end
 end
 
