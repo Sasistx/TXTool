@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
 
 require 'TX'
+require 'optparse'
 
 options_parser = OptionParser.new do |opts| 
     opts.banner = 'help message'
-    txdb = TX::DeleteBranch.new()
+    txdb = DeleteBranch.new()
     opts.on('-l args', '--local args', 'local branch') do |value|
         txdb.delete_local(value)
     end
