@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'TX'
+require '../lib/mygem/TX.rb'
 
 txdb = TX::DeleteBranch.new()
 txdb.paraseArgs(ARGV)
