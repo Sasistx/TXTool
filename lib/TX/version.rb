@@ -1,3 +1,3 @@
-module Mygem
+module TX
   VERSION = "0.1.0"
 end
