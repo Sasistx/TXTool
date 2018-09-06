@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
-#require 'tx'
+require 'tx'
 require 'optparse'
-require_relative '../lib/tx'
 
 puts "#{TX::VERSION}"
 options_parser = OptionParser.new do |opts| 
