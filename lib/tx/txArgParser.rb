@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-class TXArgParser
+module TXArgParser
     def TXArgParser.gitBrIsValid(path)
         if path.length >=3 && path != "dev"
             return true
@@ -13,4 +13,5 @@ class TXArgParser
         puts "🚫 git branch named #{path} is invalid: too short or contain 'dev',you can try it manually."
     end
 end
+
 

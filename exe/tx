@@ -7,35 +7,35 @@ options_parser = OptionParser.new do |opts|
     opts.banner = 'tx tool help message: '
     txdb = DeleteBranch.new()
     opts.on('-l args', '--local args', 'delete local branch') do |value|
-        if TXArgParser.gitBrIsValid(value)
+        if TXArgParser::gitBrIsValid(value)
             txdb.delete_local(value, false)
         else
-            TXArgParser.gitBrInvalidMessage(value)
+            TXArgParser::gitBrInvalidMessage(value)
         end
     end
 
     opts.on('-L args', '--Local args', 'force delete local branch') do |value|
-        if TXArgParser.gitBrIsValid(value)
+        if TXArgParser::gitBrIsValid(value)
             txdb.delete_local(value, true)
         else
-            TXArgParser.gitBrInvalidMessage(value)
+            TXArgParser::gitBrInvalidMessage(value)
         end
     end
 
     opts.on('-r args', '--remote args', 'delete remote branch') do |value|
-        if TXArgParser.gitBrIsValid(value)
+        if TXArgParser::gitBrIsValid(value)
             txdb.delete_remote(value)
         else
-            TXArgParser.gitBrInvalidMessage(value)
+            TXArgParser::gitBrInvalidMessage(value)
         end
     end
 
     opts.on('-a args', '--all args', 'delete local & remote branch') do |value|
-        if TXArgParser.gitBrIsValid(value)
+        if TXArgParser::gitBrIsValid(value)
             txdb.delete_local(value, false)
             txdb.delete_remote(value)
         else
-            TXArgParser.gitBrInvalidMessage(value)
+            TXArgParser::gitBrInvalidMessage(value)
         end
     end
 
