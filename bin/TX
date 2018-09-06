@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
 require 'tx'
-require 'ArgParser'
 require 'optparse'
+require_relative '../lib/tx/ArgParser'
 
 options_parser = OptionParser.new do |opts| 
     opts.banner = 'help message'
