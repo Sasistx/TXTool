@@ -1,2 +1,2 @@
-require "TX/version"
-require "TX/TX"
+require "tx/version"
+require "tx/tx"

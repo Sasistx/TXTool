@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 
 require 'open3'
-#require 'optparse'
 
 class DeleteBranch
-    def delete_local(path)
+
+    def delete_local(path, isForce)
         puts "🚀 local brach match(#{path}) delete start"
-        gitCommand = "git branch -l |grep '#{path}' |xargs git branch -d"
+        gitCommand = "git branch -l |grep '#{path}' |xargs git branch -#{isForce ? "D": "d"}"
         file = IO.popen(gitCommand)
         file.each_line { |s| p s}
         puts "👻 local brach match(#{path}) delete end"
@@ -29,24 +29,4 @@ class DeleteBranch
         file.each_line {|s| printf s}
     end
 end
-# module TX
-
-# end
-
-# options_parser = OptionParser.new do |opts| 
-#     opts.banner = 'help message'
-#     txdb = TX::DeleteBranch.new()
-#     opts.on('-l args', '--local args', 'local branch') do |value|
-#         txdb.delete_local(value)
-#     end
-
-#     opts.on('-r args', '--remote args', 'remote branch') do |value|
-#         txdb.delete_remote(value)
-#     end
-
-#     opts.on('-a args', '--all args', 'local & remote branch') do |value|
-#         txdb.delete_local(value)
-#         txdb.delete_remote(value)
-#     end
-# end.parse!
 

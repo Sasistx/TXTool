@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "TX/version"
+require "tx/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "TX"
-  spec.version       = TX::VERSION
+  spec.name          = "tx"
+  spec.version       = tx::VERSION
   spec.authors       = ["gaotianxiang"]
   spec.email         = ["genius_tx@sina.com"]
 
@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = "exe"
-  spec.executables   = "TX"#`git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }#"TX"
+  spec.executables   = "tx"
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.16"
