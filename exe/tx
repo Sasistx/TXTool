@@ -40,7 +40,7 @@ options_parser = OptionParser.new do |opts|
     end
 
     opts.on('-u', '--uninstall', 'uninstall tx tool') do |value|
-        exec "gem uninstall tx"
+        exec "gem uninstall #{TX::NAME}"
     end
 end.parse!
 
