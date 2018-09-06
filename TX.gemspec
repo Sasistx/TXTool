@@ -5,7 +5,7 @@ require "tx/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "tx"
-  spec.version       = tx::VERSION
+  spec.version       = TX::VERSION
   spec.authors       = ["gaotianxiang"]
   spec.email         = ["genius_tx@sina.com"]
 
