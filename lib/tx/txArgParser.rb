@@ -10,7 +10,7 @@ class TXArgParser
     end
 
     def TXArgParser.gitBrInvalidMessage(path)
-        puts "🚫 git br named #{path} is inValid, you can try it manually"
+        puts "🚫 git branch named #{path} is invalid: too short or contain 'dev',you can try it manually."
     end
 end
 
