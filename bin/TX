@@ -3,6 +3,7 @@
 require 'tx'
 require 'optparse'
 
+puts "#{TX::VERSION}"
 options_parser = OptionParser.new do |opts| 
     opts.banner = 'help message'
     txdb = DeleteBranch.new()
