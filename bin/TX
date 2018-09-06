@@ -2,7 +2,7 @@
 
 require 'tx'
 require 'optparse'
-require_relative '../lib/tx/ArgParser'
+require 'ArgParser'
 
 options_parser = OptionParser.new do |opts| 
     opts.banner = 'help message'

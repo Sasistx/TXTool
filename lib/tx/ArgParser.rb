@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-class ArgParser
+module ArgParser
     def gitBrIsValid(path)
         if path.length >=3 && path != "dev"
             return true
