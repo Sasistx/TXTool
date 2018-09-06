@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-module ArgParser
-    def gitBrIsValid(path)
+class ArgParser
+    def ArgParser.gitBrIsValid(path)
         if path.length >=3 && path != "dev"
             return true
         else 
@@ -9,7 +9,7 @@ module ArgParser
         end
     end
 
-    def gitBrInvalidMessage(path)
+    def ArgParser.gitBrInvalidMessage(path)
         puts "🚫 git br named #{path} is inValid, you can try it manually"
     end
 end

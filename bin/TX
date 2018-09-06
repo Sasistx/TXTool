@@ -7,35 +7,35 @@ options_parser = OptionParser.new do |opts|
     opts.banner = 'help message'
     txdb = DeleteBranch.new()
     opts.on('-l args', '--local args', 'delete local branch') do |value|
-        if ArgParser::gitBrIsValid(value)
+        if ArgParser.gitBrIsValid(value)
             txdb.delete_local(value, false)
         else
-            ArgParser::gitBrInvalidMessage(value)
+            ArgParser.gitBrInvalidMessage(value)
         end
     end
 
     opts.on('-L args', '--Local args', 'force delete local branch') do |value|
-        if ArgParser::gitBrIsValid(value)
+        if ArgParser.gitBrIsValid(value)
             txdb.delete_local(value, true)
         else
-            ArgParser::gitBrInvalidMessage(value)
+            ArgParser.gitBrInvalidMessage(value)
         end
     end
 
     opts.on('-r args', '--remote args', 'remote branch') do |value|
-        if ArgParser::gitBrIsValid(value)
+        if ArgParser.gitBrIsValid(value)
             txdb.delete_remote(value)
         else
-            ArgParser::gitBrInvalidMessage(value)
+            ArgParser.gitBrInvalidMessage(value)
         end
     end
 
     opts.on('-a args', '--all args', 'local & remote branch') do |value|
-        if ArgParser::gitBrIsValid(value)
+        if ArgParser.gitBrIsValid(value)
             txdb.delete_local(value, false)
             txdb.delete_remote(value)
         else
-            ArgParser::gitBrInvalidMessage(value)
+            ArgParser.gitBrInvalidMessage(value)
         end
     end
 end.parse!
