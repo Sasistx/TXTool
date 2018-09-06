@@ -4,7 +4,7 @@ require 'tx'
 require 'optparse'
 
 options_parser = OptionParser.new do |opts| 
-    opts.banner = 'help message'
+    opts.banner = 'tx tool help message: '
     txdb = DeleteBranch.new()
     opts.on('-l args', '--local args', 'delete local branch') do |value|
         if TXArgParser.gitBrIsValid(value)
@@ -22,7 +22,7 @@ options_parser = OptionParser.new do |opts|
         end
     end
 
-    opts.on('-r args', '--remote args', 'remote branch') do |value|
+    opts.on('-r args', '--remote args', 'delete remote branch') do |value|
         if TXArgParser.gitBrIsValid(value)
             txdb.delete_remote(value)
         else
@@ -30,13 +30,17 @@ options_parser = OptionParser.new do |opts|
         end
     end
 
-    opts.on('-a args', '--all args', 'local & remote branch') do |value|
+    opts.on('-a args', '--all args', 'delete local & remote branch') do |value|
         if TXArgParser.gitBrIsValid(value)
             txdb.delete_local(value, false)
             txdb.delete_remote(value)
         else
             TXArgParser.gitBrInvalidMessage(value)
         end
+    end
+
+    opts.on('-u', '--uninstall', 'uninstall tx tool') do |value|
+        IO.popen("gem uninstall tx")
     end
 end.parse!
 
